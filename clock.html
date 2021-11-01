@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock project</title>
+    <link rel="stylesheet" href="clock.css">
+    <script src="clock.js"></script>
+    <style>
+        #clock{
+            background: url('https://www.linkpicture.com/q/PikPng.com_clock-hands-png_790352.png')no-repeat;
+        
+            width: 40vw;
+            height: 45vw;
+            background-size:100%;
+            margin: auto;
+            position: relative;
+        }
+        
+        #hour{
+            position: absolute;
+            background-color: black;
+            width: 3%;
+            height: 27%;
+            border-radius: 10px;
+            top: 22%;
+            left: 48.30%;
+            transform-origin: bottom;
+            
+        
+        }
+        #minute{
+            position: absolute;
+            background-color: black;
+            width: 2%;
+            height: 32%;
+            border-radius: 10px;
+            top: 18.2%;
+            left: 50.2%;
+            transform-origin: bottom;
+           
+        }
+        #second{
+            position: absolute;
+            background-color: black;
+            width: 1%;
+            height: 36%;
+            border-radius: 10px;
+            top: 14%;
+            left: 49.1%;
+            transform-origin: bottom;
+           
+        }
+          
+        
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+    
+    <script>
+        setInterval(() => {
+            d = new Date ();
+            htime = d.getHours();
+            mtime = d.getMinutes();
+            stime = d.getSeconds();
+            hrotation = 30*htime + mtime/2;
+            mrotation = 6*mtime;
+            srotation = 6*stime;
+       
+            hour.style.transform = `rotate(${hrotation}deg)`
+            minute.style.transform = `rotate(${mrotation}deg)`
+            second.style.transform = `rotate(${srotation}deg)`
+       }, 1000);
+    </script>
+
+</body>
+</html>
